@@ -42,7 +42,7 @@ header {
     align-items: center;
     font-family: 'Maven Pro', sans-serif;
     padding: 1rem 2rem 1rem 2rem;
-    background-color: #F3F0EB;
+    background-color: #f2fdfcc7;
     border-radius: 2rem;
     z-index: 99;
     transition: background-color 0.3s ease-in;

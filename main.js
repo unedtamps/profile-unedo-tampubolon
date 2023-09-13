@@ -38,7 +38,7 @@ window.addEventListener("scroll", () => {
 
   // Check if the user has scrolled below the top offset threshold
   if (scrollY > topOffsetThreshold) {
-    navBar.style.backgroundColor = "rgba(243, 240, 235, 1)"; // Set your desired color
+    navBar.style.backgroundColor = "rgba(243, 240, 235,0.6)"; // Set your desired color
   } else {
     // If at the top, make the background color transparent
     navBar.style.backgroundColor = "rgba(243, 240, 235, 0)"; // Transparent background
