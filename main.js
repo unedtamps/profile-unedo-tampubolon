@@ -20,27 +20,37 @@ overlay.addEventListener("click", () => {
   yt_pop_up.setAttribute("src", videoSrc);
 });
 
-const navBar = document.querySelector(".nav-bar");
-const a_click = document.querySelectorAll(".nav-bar a");
-
-a_click.forEach((a) => {
-  a.addEventListener("click", () => {
-    a_click.forEach((navItem) => {
-      navItem.classList.remove("nav-active");
-    });
-    a.classList.add("nav-active");
-  });
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
 });
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-  const topOffsetThreshold = 100; // Adjust this value as needed
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
 
-  // Check if the user has scrolled below the top offset threshold
-  if (scrollY > topOffsetThreshold) {
-    navBar.style.backgroundColor = "rgba(243, 240, 235,0.7)"; // Set your desired color
-  } else {
-    // If at the top, make the background color transparent
-    navBar.style.backgroundColor = "rgba(243, 240, 235, 0)"; // Transparent background
-  }
-});
+const mediaQuery = window.matchMedia("(min-width: 600px)");
+
+const handleMedia = (mediaQuery) => {
+  const handleScrool = () => {
+    const scrollY = window.scrollY;
+    const topOffsetThreshold = 100; // Adjust this value as needed
+    // Check if the user has scrolled below the top offset threshold
+    if (mediaQuery.matches) {
+      if (scrollY > topOffsetThreshold) {
+        navMenu.style.backgroundColor = "rgba(20, 45, 76,1)"; // Set your desired color
+      } else {
+        // If at the top, make the background color transparent
+        navMenu.style.backgroundColor = "rgba(20, 45, 76,0)"; // Transparent background
+      }
+    }
+  };
+  handleScrool();
+  window.addEventListener("scroll", handleScrool);
+};
+handleMedia(mediaQuery);
