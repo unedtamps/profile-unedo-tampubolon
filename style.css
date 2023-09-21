@@ -17,11 +17,98 @@ body {
     height: 100%;
 }
 
+header {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: end;
+    padding: 10px 24px;
+    z-index: 9999;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 92%;
+    height: 105vh;
+    left: -150%;
+    top: -20px;
+    background-color: rgba(20, 45, 76, 1);
+    transition: 0.5s;
+    gap: 0;
+    z-index: 999;
+}
+
+.nav-item {
+    margin: 2rem 0;
+    margin-right: 2.5rem;
+}
+
+.nav-menu.active {
+    left: 0;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: dodgerblue;
+}
+
+.hamburger {
+    position: fixed;
+    display: block;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 #home {
     margin-right: 0.5rem;
     margin-left: 0.7rem;
     margin-bottom: 0.6rem;
-    margin-top: 0;
+    margin-top: 2rem;
 }
 
 .heading {
@@ -151,7 +238,7 @@ body {
     background-color: #132743;
     color: #e3e3e3;
     width: 70%;
-    border-radius: 1rem;
+    border-radius: 0.9rem;
     overflow: hidden;
     border: 7px solid #466063;
     box-shadow: rgba(0, 0, 255, 0.4) 0px 20px 20px -20px;
@@ -244,9 +331,6 @@ body {
     box-shadow: 4px 4px 4px rgba(0, 128, 0, 0.655);
 }
 
-.web-content-text {
-    margin-left: 0;
-}
 
 .web-content h3 {
     font-size: 0.9rem;
@@ -259,6 +343,7 @@ body {
 }
 
 .web-content-text {
+    margin-left: 0;
     font-family: 'Maven Pro', sans-serif;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -346,6 +431,10 @@ body {
     font-size: 0.8rem;
 }
 
+.get-form {
+    font-family: 'Rowdies', cursive;
+}
+
 .forms {
     display: block;
     margin-bottom: 0.4rem;
@@ -361,7 +450,7 @@ body {
     outline: none;
 }
 
-.forms:hover {
+.forms:focus {
     border-bottom: 0.2rem solid blue;
 }
 
@@ -465,95 +554,72 @@ footer {
 @media screen and (min-width:600px) {
     header {
         position: relative;
-        display: flex;
-        justify-content: center;
-        width: 100%;
+        background-color: transparent;
     }
 
     .heading {
-        font-family: 'Rowdies', cursive;
         font-size: 5rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        text-align: center;
     }
 
-    .nav-bar {
-        display: flex;
-        position: fixed;
-        justify-content: space-between;
-        align-items: center;
-        font-family: 'Maven Pro', sans-serif;
-        padding: 1rem 2rem 1rem 2rem;
-        background-color: #f2fdfcc7;
-        border-radius: 2rem;
-        z-index: 99;
-        transition: background-color 0.3s ease-in;
+    .hamburger {
+        display: none;
+        cursor: pointer;
     }
+
 
     #home {
         padding-top: 6rem;
     }
 
-    .nav-bar a {
-        text-decoration: none;
-        font-size: 1.2rem;
-        padding: 0.3rem 1.2rem 0.3rem 1.2rem;
-        border-radius: 2rem;
-        color: black;
-        font-weight: bold;
+    .navbar {
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0;
+        width: 100%;
+        top: 1px;
     }
 
-    .nav-bar a:active {
-        color: blue;
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left: 0;
+        top: 0;
+        height: 3rem;
+        border-radius: 50px;
+        width: 20rem;
+        transition: 0.5s;
+        gap: 0;
+        z-index: 999;
     }
 
-    .nav-bar a:visited {
-        color: black;
+    .nav-link {
+        font-size: 0.9rem;
     }
 
-    .nav-bar li {
-        list-style-type: none;
-    }
-
-    .nav-active {
-        background-color: #81A398;
-        color: white;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
 
     .img-profile img {
         width: 16rem;
     }
 
     .shs-post {
-        background-color: #132743;
-        color: #e3e3e3;
         width: 30rem;
         border-radius: 1rem;
-        overflow: hidden;
-        border: 7px solid #466063;
-        box-shadow: rgba(0, 0, 255, 0.4) 0px 20px 20px -20px;
     }
 
     .shs-post p {
-        font-family: 'Maven Pro', sans-serif;
         padding-left: 3rem;
         font-size: 16px;
-        text-align: start;
         padding-right: 3rem;
         font-weight: 3rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
         line-height: 1.5rem;
-        word-spacing: 0.1rem;
         text-align: center;
     }
 
     .shs-map {
-        border: 4px solid #466063;
-        box-shadow: rgba(0, 0, 255, 0.4) 0px 20px 20px -20px;
-        border-radius: 0.7rem;
         width: 30rem;
         height: 19rem;
     }
@@ -584,22 +650,13 @@ footer {
     }
 
     .youtube-container {
-        display: flex;
         align-items: center;
         justify-content: center;
-        gap: 3rem;
 
     }
 
     .youtube-content {
         width: 27rem;
-        background-color: #407088;
-        border-bottom-left-radius: 8px;
-        border-top-right-radius: 8px;
-        box-shadow:
-            -50px -50px 0 -40px #a2a8d3,
-            50px 50px 0 -40px #a2a8d3;
-        overflow: hidden;
     }
 
     .contact-container {
@@ -610,35 +667,11 @@ footer {
     }
 
     .get-touch {
-        font-family: 'Rowdies', cursive;
         width: 30%;
     }
 
-    .get-touch h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .get-touch p {
-        margin-top: 5px;
-        line-height: 1.2rem;
-        word-spacing: 5px;
-        font-size: 0.8rem;
-    }
-
     .forms {
-        display: block;
-        margin-bottom: 0.4rem;
-        background-color: transparent;
-        border: 0;
-        border-bottom: 0.2rem solid black;
-        padding-right: 6rem;
-        color: white;
-        width: 7rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        text-align: start;
-        outline: none;
+        width: 10rem;
     }
 
     .footer-container {
@@ -664,9 +697,6 @@ footer {
 
 }
 
-
-
-
 @media screen and (min-width:1024px) {
 
     #home {
@@ -677,10 +707,9 @@ footer {
     }
 
     .heading {
-        text-align: center;
         font-size: 8rem;
         margin-bottom: 2rem;
-        margin-top: 0;
+        margin-top: 0.9rem;
         width: 100%;
         white-space: break-spaces;
     }
@@ -692,13 +721,16 @@ footer {
     .home-heading2 {
         display: none;
     }
-
-    .profile-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .nav-menu {
+        height: 3.5rem;
+        width: 30rem;
+        
     }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
 
     .img-profile {
         margin-right: 5rem;
@@ -712,12 +744,9 @@ footer {
     .text-profile h2 {
         font-size: 3rem;
         margin-bottom: 0;
-        margin-left: 1rem;
-        margin-right: 1rem;
     }
 
     .text-profile p {
-        font-family: 'Maven Pro', sans-serif;
         font-size: 1rem;
         font-weight: bold;
         word-spacing: 0.3rem;
@@ -735,15 +764,12 @@ footer {
     }
 
     .sub-heading {
-        font-family: 'Josefin Sans', sans-serif;
         font-size: 4rem;
     }
 
     .shs-container {
-        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        align-items: center;
         margin-right: 0;
     }
 
@@ -751,19 +777,14 @@ footer {
         width: 70%;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        border: 0.5rem solid white;
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
         overflow: hidden;
     }
-
 
     .shs-img {
         width: 100%;
         display: flex;
         justify-content: center;
     }
-
-
 
     .shs-map {
         margin-left: 1rem;
@@ -809,28 +830,18 @@ footer {
     }
 
     .web-content {
-        display: flex;
-        align-items: center;
         padding-left: 1rem;
-        border-radius: 4rem;
         padding-right: 1rem;
         width: 100%;
         margin-bottom: 6rem;
-        box-shadow: 5px 5px 5px green;
+        box-shadow: 4px 4px 4px rgba(0, 128, 0, 0.655);
     }
 
     .web-content img {
-        border-radius: 100%;
         width: 4rem;
         margin-left: 0;
-        background-color: white;
     }
 
-    .web-content-text {
-        font-family: 'Maven Pro', sans-serif;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
 
     .web-content-text h3 {
         margin: 3px;
@@ -841,7 +852,7 @@ footer {
     }
 
     #youtube {
-        padding-top: 0rem;
+        padding-top: 2rem;
         margin-left: 3rem;
         margin-right: 3rem;
     }
@@ -849,10 +860,7 @@ footer {
 
     .youtube-container {
         margin-top: 3rem;
-        display: flex;
-        align-items: center;
         flex-direction: row;
-        justify-content: center;
         padding-bottom: 1rem;
         gap: 1%;
     }
@@ -861,7 +869,6 @@ footer {
         width: 20rem;
         height: 20rem;
         margin-left: 1.5rem;
-        border: 0.4rem solid #F2F6FD;
         border-radius: 0.5rem;
     }
 
@@ -891,46 +898,7 @@ footer {
     .get-touch {
         width: 35%;
         margin-right: 2rem;
-        font-family: 'Rowdies', cursive;
     }
-
-    .get-touch h3 {
-        font-size: 2rem;
-    }
-
-    .get-form {
-        font-family: 'Rowdies', cursive;
-    }
-
-    .forms {
-        display: block;
-        margin-bottom: 0.4rem;
-        background-color: transparent;
-        border: 0;
-        border-bottom: 0.2rem solid black;
-        padding-right: 6rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        text-align: start;
-        outline: none;
-
-    }
-
-    .forms:hover {
-        border-bottom: 0.2rem solid blue;
-    }
-
-    .button {
-        padding-left: 2rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-right: 2rem;
-        border-radius: 0.3rem;
-        margin-top: 1rem;
-        font-family: 'Rowdies', cursive;
-        background-color: #A8DF8E;
-    }
-
 
     .footer-container {
         display: flex;
@@ -978,32 +946,15 @@ footer {
 
 @media screen and (min-width:1280px) {
 
-    #home {
-        margin-left: 10rem;
-        padding-top: 6rem;
-        margin-right: 10rem;
-        margin-bottom: 2rem;
-    }
 
     .heading {
-        text-align: center;
-        font-size: 8rem;
         margin-bottom: 2rem;
-        margin-top: 0;
+        margin-top: 0.9rem;
         width: 100%;
         white-space: break-spaces;
     }
 
-    .home-heading {
-        display: block;
-    }
-
-    .home-heading2 {
-        display: none;
-    }
-
     .profile-container {
-        display: flex;
         justify-content: space-between;
         align-items: flex-start;
         flex-direction: row;
@@ -1023,62 +974,34 @@ footer {
 
     .text-profile h2 {
         font-size: 2.3rem;
-        margin-bottom: 0;
         text-align: left;
         margin-left: 0rem;
         margin-right: 0rem;
     }
 
-    .text-profile p {
-        font-family: 'Maven Pro', sans-serif;
-        font-size: 1rem;
-        font-weight: bold;
-        word-spacing: 0.3rem;
-        line-height: 150%;
-        font-stretch: expanded;
-        margin-left: 0rem;
-        margin-right: 0rem;
-    }
-
-
-
     .sub-heading {
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 4rem;
         text-align: center;
-        margin-bottom: 2rem;
     }
-
-    .shs-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+    .shs-container{
+        align-items: start;
     }
 
     .shs-post {
-        width: 70%;
+        width: 50rem;
+        height: 23.6rem ;
     }
-
+    .shs-post img {
+        width: 40rem  ;
+        height: 15rem;
+        object-fit: cover;
+    }
     .shs-post p {
         padding-top: 1px;
         padding-bottom: 1px;
     }
-
-    .shs-img {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .shs-map {
-        margin-left: 1rem;
-    }
-
-    .shs-map iframe {
-        width: 98%;
-        height: 97%;
-        border: 0.5rem solid white;
-        box-shadow: 5px 5px 5px black;
+    .shs-map{
+        width: 56rem;
+        height: 23.6rem ;
     }
 
     #website {
@@ -1097,77 +1020,42 @@ footer {
     }
 
     .web-container {
-        display: flex;
-        justify-content: center;
         gap: 2rem;
     }
 
-    .web-left {
-        width: 30%;
-    }
-
-    .web-right {
-        width: 30%;
-        margin-top: 6rem;
-    }
 
     .web-content {
-        display: flex;
-        align-items: center;
-        padding-left: 1rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        border-radius: 4rem;
-        padding-right: 1rem;
-        width: 100%;
-        margin-bottom: 6rem;
-        box-shadow: 5px 5px 5px green;
     }
 
     .web-content img {
-        border-radius: 100%;
         width: 5rem;
-        margin-left: 0;
     }
 
-    .web-content-text {
-        font-family: 'Maven Pro', sans-serif;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .web-content-text h3 {
-        margin: 3px;
-    }
-
-    .web-content-text p {
-        margin: 3px;
-    }
 
     #youtube {
         padding-top: 3rem;
-        margin-left: 3rem;
-        margin-right: 3rem;
     }
 
 
     .youtube-container {
         display: flex;
-        align-items: center;
-        justify-content: center;
         column-gap: 3rem;
         padding-bottom: 1rem;
     }
 
+    .youtube-container {
+        align-items: center;
+        justify-content: center;
+
+    }
+
     .youtube-content {
-        font-family: 'Maven Pro', sans-serif;
         width: 30rem;
         height: 23rem;
         margin-left: 1.5rem;
         border-radius: 0.5rem;
-        box-shadow:
-            -50px -50px 0 -40px #a2a8d3,
-            50px 50px 0 -40px #a2a8d3;
     }
 
     .youtube-content img {
@@ -1180,13 +1068,6 @@ footer {
         padding-bottom: 0rem;
     }
 
-    #contact {
-        padding-top: 0rem;
-        margin-left: 10rem;
-        margin-right: 10rem;
-        width: 75%;
-        margin-bottom: 9rem;
-    }
 
     .contact-container {
         display: flex;
@@ -1204,32 +1085,15 @@ footer {
     .get-touch h3 {
         font-size: 3rem;
     }
+
     .get-touch p {
         font-size: 1rem;
-    }
-
-    .get-form {
-        font-family: 'Rowdies', cursive;
-    }
-
-
-    .button {
-        padding-left: 2rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-right: 2rem;
-        border-radius: 0.3rem;
-        margin-top: 1rem;
-        font-family: 'Rowdies', cursive;
-        background-color: #A8DF8E;
     }
 
     footer {
         height: 20rem;
         margin: 0;
-        width: 101%;
         padding: 0;
-        font-family: 'Cabin', sans-serif;
     }
 
     .footer-container {
