@@ -31,7 +31,7 @@ document.querySelectorAll(".nav-link").forEach((n) =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
-  })
+  }),
 );
 
 const mediaQuery = window.matchMedia("(min-width: 600px)");
@@ -54,3 +54,11 @@ const handleMedia = (mediaQuery) => {
   window.addEventListener("scroll", handleScrool);
 };
 handleMedia(mediaQuery);
+
+function setBody() {
+  var message = document.getElementById("message").value;
+  var mailtoLink =
+    "mailto:unedo.tampubolon@gmail.com?subject=Get in touch&body=" + message;
+  console.log(mailtoLink);
+  document.getElementById("emailForm").action = mailtoLink;
+}

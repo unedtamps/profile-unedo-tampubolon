@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,16 +39,14 @@
             Sumatera Utara
           </h2>
           <p>
-            Sudah lebih satu tahun kuliah, banyak pelajaran yang saya dapatkan.
-            Dasar pemrograman, sistem digital dan struktur data adalah mata
-            kuliah persiapan dalam studi saya di Teknik Infomatika ITS. Selain
-            itu saya juga belajar hal-hal lain terutama mempelajari dunia web
-            development.
+            Saya mulai kuliah di ITS pada tahun 2022, banyak hal yang sudah saya
+            pelajari. Hal-hal yang sudah saya pelajari antara lain dasar- dasar
+            pemmrograman (c, c++), struktur data (c++) ,sistem digital, dan lain
+            - lain.
           </p>
           <p>
-            Di semester ini saya mengambil mata kuliah pemrograman web. Harapan
-            saya semoga kemampuan saya dalam bermain-main dengan web semaikin
-            berkembang lagi
+            Saya memiliki ketertarikan dalam bidang pengembangan web terutama di
+            bagian backend. Saya juga memiliki ketertarikan dalam bidang AI/ML
           </p>
         </div>
       </div>
@@ -82,6 +80,116 @@
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
+        </div>
+      </div>
+      <h2 class="sub-heading" style="margin-top: 1rem">University</h2>
+      <div class="shs-container">
+        <div class="shs-post">
+          <div class="shs-img">
+            <a href="https://www.its.ac.id/" target="_blank">
+              <img src="media/profile/gambarits.jpeg" alt="gambar its" />
+            </a>
+          </div>
+          <p>
+            Saya adalah mahasiswa ITS jurusah teknik informatika. Saya kuliah
+            mulai tahun 2022.
+          </p>
+        </div>
+        <div class="shs-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15830.538195771953!2d112.7949253!3d-7.282356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology!5e0!3m2!1sen!2sid!4v1707027597427!5m2!1sen!2sid"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman">
+      <h1 class="heading">Pengalaman</h1>
+      <h2 class="sub-heading">Pengalaman Selama Kuliah</h2>
+      <div class="pengalaman-container">
+        <div class="pengalaman-body">
+          <div class="img-p">
+            <img src="media/pengalaman/pengalamansch.jpeg" alt="sch" />
+          </div>
+          <div class="pengalaman-desc">
+            <p>2023 : Staff Backend</p>
+            <p>2024 : Staff Ahli Backend</p>
+          </div>
+        </div>
+        <div class="pengalaman-body">
+          <div class="img-p">
+            <img src="media/pengalaman/ilits.png" alt="ilits" />
+          </div>
+          <div class="pengalaman-desc">
+            <p>2024 : Staff Ahli Backend</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h1 class="heading">Work</h1>
+      <h2 class="sub-heading">Hal-hal random yang saya buat</h2>
+      <div class="work-container">
+        <div class="work-body">
+          <div class="work-img">
+            <img src="media/work/golang.png" alt="golang" />
+          </div>
+          <h2 style="font-weight: bold">Golang Boilerpalate</h2>
+          <div>
+            Saya membuat sebuah boiler plate untuk pengembangan web di bahasa
+            backend.
+            <p>
+              <span style="font-weight: bold">GoBackend </span>boiler plate
+              untuk backend dalam bahasa go. check in this
+              <a href="https://github.com/unedtamps/go-backend">github</a>
+            </p>
+            <p>
+              <span style="font-weight: bold">Golang Fullstack</span>
+              boiler plate untuk frontend dan backend dengan golang dan templ.
+              check in this
+              <a href="https://github.com/unedtamps/golang-fullstack">github</a>
+            </p>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-img">
+            <a href="https://github.com/unedtamps/nvim-config">
+              <img src="media/work/nvim.jpg" alt="" />
+            </a>
+          </div>
+          <h3>Nvim Config</h3>
+          <div>
+            Saya membut configurasi neovim agar menjadi editor yang lebih bagus
+            dari vscode
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-img">
+            <a href="https://github.com/unedtamps/spom">
+              <img src="media/work/spom.jpg" alt="" />
+            </a>
+          </div>
+          <h3>SPOM</h3>
+          <div>
+            Saya membuat sebuah website seperti sosial media tetapi tentang meme
+            dan asal mula meme itu
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-img">
+            <a href="https://github.com/unedtamps/cinemas-api">
+              <img src="media/work/cinemas.jpg" alt="" />
+            </a>
+          </div>
+          <h3>Cinemas-Api</h3>
+          <div>
+            Saya membuat suatu api sederhana untuk data anime, movie dan tv
+            series
+          </div>
         </div>
       </div>
     </section>
@@ -252,12 +360,9 @@
           </p>
         </div>
         <div class="get-form">
-          <form action="">
-            <input class="forms" type="text" placeholder="Name" id="name" />
-            <input class="forms" type="text" placeholder="Email" id="email" />
+          <form id="emailForm" onsubmit="setBody()" method="post">
             <textarea
               class="forms"
-              name="message"
               id="message"
               cols="17"
               rows="5"
