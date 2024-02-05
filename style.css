@@ -56,7 +56,7 @@ a {
 }
 
 .nav-item {
-  margin: 2rem 0;
+  margin: 1rem 0;
   margin-right: 2.5rem;
 }
 
@@ -287,8 +287,11 @@ a {
 
 }
 
-#pengalaman {
-  margin: 0rem 0.7rem 2rem 0.7rem;
+#experience {
+  margin-right: 0.5rem;
+  margin-left: 0.7rem;
+  margin-bottom: 0.6rem;
+  padding-top: 3rem;
 }
 
 .pengalaman-container {
@@ -391,7 +394,7 @@ a {
   margin-right: 1.3rem;
   margin-left: 1.3rem;
   margin-bottom: 0.6rem;
-  margin-top: 0;
+  padding-top: 3rem;
 }
 
 .work-container {
@@ -803,7 +806,7 @@ footer {
 
   .nav-menu {
     height: 3.5rem;
-    width: 30rem;
+    width: 40rem;
 
   }
 
